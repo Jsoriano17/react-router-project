@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import About from './About'
 import NavBar from './NavBar'
 import { Container } from 'semantic-ui-react'
+import Virus from './Virus'
 
 
 export default class App extends React.Component {
@@ -21,9 +22,13 @@ export default class App extends React.Component {
           <NavBar />
           <Switch>
             <Route path='/About' component={About} />
+            <Route path='/Home' component={Home} />
+            <Route path='/Virus' component={Virus} />
+
           </Switch >
         </Container>
-  
+        <div>
+        </div>
       </div>
     );
   }
