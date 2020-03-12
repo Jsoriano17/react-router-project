@@ -14,7 +14,7 @@ export default class NavBar extends React.Component {
 
     return (
       <Menu inverted>
-        <Link to="/">
+        <Link to="/Home">
           <Menu.Item
             as={Divider}
             name='home'
@@ -34,7 +34,7 @@ export default class NavBar extends React.Component {
             About
         </Menu.Item>
         </Link>
-        <Link>
+        <Link to='/Virus'>
           <Menu.Item
             as={Divider}
             name='virus'

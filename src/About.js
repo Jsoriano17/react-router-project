@@ -1,10 +1,10 @@
 import React from 'react'
 
 
-const About=()=>{
+const About=(props)=>{
   return(
     <div>
-      About
+      {props.something}
     </div>
   )
 }
