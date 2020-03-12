@@ -14,6 +14,7 @@ export default class App extends React.Component {
       { id: 2, name: 'Ebola', about: 'A virus that causes severe bleeding, organ failure, and can lead to death.' }
     ],
   }
+ 
   render() {
     return (
 
@@ -22,8 +23,8 @@ export default class App extends React.Component {
           <NavBar />
           <Switch>
             <Route path='/About' render={(props) => <About {...props} something={'test'} />}/>
-            <Route path='/Home' component={Home} />
-            {/* <Route path='/Virus' component={Virus} /> */}
+            <Route path='/Home' render={(props) => <Home {...props} vir={this.state.viruses} />}/>
+            <Route path='/Virus' render={(props) => <Virus {...props} vir={'test'} />}/>
           </Switch >
         </Container>
 

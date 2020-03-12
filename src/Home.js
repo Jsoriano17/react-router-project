@@ -1,9 +1,15 @@
 import React from 'react'
+import ShowVirus from './ShowVirus'
 
-const Home = () =>{
+const Home = (props) =>{
+
   return(
     <div>
-      Home
+          {
+          props.vir.map(virus => (
+            <ShowVirus key={virus.id} {...virus} />
+          ))
+        }
     </div>
   )
 }
