@@ -24,7 +24,7 @@ export default class NavBar extends React.Component {
             Home
         </Menu.Item>
         </Link>
-        <Link>
+        <Link  to='/About'>
           <Menu.Item
             as={Divider}
             name='about'
@@ -38,7 +38,7 @@ export default class NavBar extends React.Component {
           <Menu.Item
             as={Divider}
             name='virus'
-            active={activeItem === 'about'}
+            active={activeItem === 'virus'}
             onClick={this.handleItemClick}
           >
             Virus
