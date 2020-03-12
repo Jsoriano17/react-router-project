@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import NewForm from './NewForm';
 
 export default class App extends React.Component {
   state = {
@@ -12,6 +13,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
+        <NewForm />
       </div>
     )
   }
