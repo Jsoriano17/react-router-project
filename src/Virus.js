@@ -1,15 +1,24 @@
-import React from 'react'
+import React from 'react';
+import NewForm from './NewForm';
+import ShowVirus from './ShowVirus';
 
-class Virus extends React.Component {
-
-  render(){
+const Virus = (props) => {
+  const { virus, addVirus, deleteVirus } = props
   return (
-    <div>
-      Virus
-      {this.showProps()}
-    </div>
+    <>
+      <NewForm addVirus={addVirus} />
+      {virus.map(e => (
+        <div key={`virus-${e.id}`}>
+          {e.name}
+          {e.about}
+          <div onClick={() => { deleteVirus(e.id) }}>Delete</div>
+        </div>
+
+
+      ))}
+    </>
   )
 }
-}
+
 
 export default Virus
