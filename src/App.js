@@ -1,7 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import NewForm from './NewForm';
+import Home from './Home';
+import { Route, Switch } from 'react-router-dom';
+import About from './About'
+import NavBar from './NavBar'
+import { Container } from 'semantic-ui-react'
 
 export default class App extends React.Component {
   state = {
@@ -12,9 +16,16 @@ export default class App extends React.Component {
   }
   render() {
     return (
-      <div>
+
+      <div className="App">
         <NewForm />
+        <Container>
+          <NavBar />
+          <Switch>
+            <Route path='/About' component={About} />
+          </Switch >
+        </Container>
       </div>
-    )
+    );
   }
 }
