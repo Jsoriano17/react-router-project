@@ -28,35 +28,43 @@ export default class App extends React.Component {
   };
 
   deleteVirus = (id) => {
-    const newViruses = this.state.viruses.filter(e=>{
+    const newViruses = this.state.viruses.filter(e => {
       return e.id !== id
     })
-    this.setState({
-      viruses: newViruses
-    })
   }
+    editVirus = (id) => {
+      const newViruses = this.state.viruses.filter(e => {
+        return e.id === id
+      })
+      this.setState({
+        viruses: newViruses
+      })
+    }
 
-  render() {
-    return (
+    render() {
+      return (
 
-      <div className="App">
-        <Container>
-          <NavBar />
-          <Switch>
+        <div className="App">
+          <Container>
+            <NavBar />
+            <Switch>
 
-            <Route path='/About' render={(props) => <About {...props} virus={this.state.viruses} />}/>
-            <Route path='/Home' render={(props) => <Home {...props} vir={this.state.viruses} />}/>
-            <Route path='/Virus' render={(props) => <Virus {...props} 
-                                                                      virus={this.state.viruses} 
-                                                                      addVirus={this.addVirus}
-                                                                      deleteVirus={this.deleteVirus} />} />
-            <Route component={NoMatch} />
-          </Switch >
-        </Container>
+              <Route path='/About' render={(props) => <About {...props} virus={this.state.viruses} />} />
+              <Route path='/Home' render={(props) => <Home {...props} vir={this.state.viruses} />} />
+              <Route path='/Virus' render={(props) => <Virus {...props}
+                virus={this.state.viruses}
+                addVirus={this.addVirus}
+                deleteVirus={this.deleteVirus} 
+                editVirus={this.editVirus} 
+                />} 
+                />
+              <Route component={NoMatch} />
+            </Switch >
+          </Container>
 
-        <div>
+          <div>
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
-}
