@@ -8,38 +8,36 @@ export default class NewForm extends React.Component {
         about: ""
     }
     handleChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-    }
+        this.setState({ [e.target.name]: e.target.value, });
+    };
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.addVirus(this.state);
         console.log(this.state)
         this.setState({
-             name: "", 
-             about: "", 
-            });
+            name: "",
+            about: "",
+        });
     }
     render() {
         return (
             <Form>
-                <Form.Field
-                onChange={this.handleChange}
-                name='name'
-                value={this.state.name}
-                >
-                    <label>Virus Name</label>
-                    <input placeholder='Virus Name' />
-                </Form.Field>
-                <Form.Field
-                 onChange={this.handleChange}
-                 name='about'
-                 value={this.state.name}
-                >
-                    <label>About Virus</label>
-                    <input placeholder='About Name' />
-                </Form.Field>
+                <Form.Input
+                    label='Virus name'
+                    name='name'
+                    placeholder='name'
+                    value={this.state.name}
+                    onChange={this.handleChange}
+                />
+
+                <Form.Input
+                    label='Virus about'
+                    name='about'
+                    placeholder='virus name'
+                    value={this.state.phone}
+                    onChange={this.handleChange}
+                />
+
                 <Button type='submit' onClick={this.handleSubmit}>Submit</Button>
             </Form>
 
