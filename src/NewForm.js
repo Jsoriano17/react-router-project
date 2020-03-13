@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react'
 
 
 export default class NewForm extends React.Component {
@@ -14,7 +14,8 @@ export default class NewForm extends React.Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.add(this.state);
+        this.props.addVirus(this.state);
+        console.log(this.state)
         this.setState({
              name: "", 
              about: "", 

@@ -1,10 +1,15 @@
 import React from 'react'
 
 
-const About=(props)=>{
-  return(
+const About = (props) => {
+  return (
     <div>
-      {props.something}
+      {props.virus.map(e => (
+        <div key={`virus-${e.id}`}>
+          <h1>{e.name}</h1>
+          <h1>{e.about}</h1>
+        </div>
+      ))}
     </div>
   )
 }
