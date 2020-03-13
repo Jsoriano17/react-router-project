@@ -10,11 +10,11 @@ export default class EditForm extends React.Component {
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value,
-        });
+        })
     };
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.editVirus(this.state);
+        this.props.edit(this.state);
         console.log(this.state)
         this.setState({
             name: "",

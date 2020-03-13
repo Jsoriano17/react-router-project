@@ -4,19 +4,19 @@ import ShowVirus from './ShowVirus';
 import EditForm from './EditForm';
 
 const Virus = (props) => {
-  const { virus, addVirus, deleteVirus, editVirus } = props
+  const { virus, addVirus, deleteVirus, editVirus, addEditVirus} = props
   return (
     <>
       <h1>Create New Virus</h1>
       <NewForm addVirus={addVirus} />
-      <h1>Edit Virus</h1>
-      <EditForm editVirus={editVirus}/>
-      <h1>Delete Virus</h1>
+      <h1>Edit and Delete Virus</h1>
       {virus.map(e => (
         <div key={`virus-${e.id}`}>
           {e.name}
           {e.about}
           <div onClick={() => { deleteVirus(e.id) }}>Delete</div>
+          <div onClick={() => { editVirus(e.id) }}>Edit</div>
+          {e.edit ? <EditForm edit={addEditVirus} id={e} /> : null}
         </div>
 
 
